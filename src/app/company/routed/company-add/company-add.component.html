@@ -1,0 +1,22 @@
+<h1>Add company</h1>
+
+<form method="post" action="#" (submit)="newCompany()">
+
+  <mat-form-field>
+    <input matInput name="name" placeholder="Company name" value="" [(ngModel)]="company.name">
+  </mat-form-field>
+
+  <div *ngIf="emptyName">
+    {{ alertMessage }}
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">
+      Add
+  </button>
+  <a href="" routerLink='/companies'>
+    <button mat-raised-button color="warn">
+      Cancel
+    </button>
+  </a>
+
+</form>

@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CustomMaterialModule } from './custom-material/custom-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CompanyModule } from './company/company.module';
+import { ComputerModule } from './computer/computer.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    CompanyModule,
+    ComputerModule,
+    AppRoutingModule,
+    CustomMaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
