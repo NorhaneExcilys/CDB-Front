@@ -26,9 +26,10 @@ export class CompanyListComponent implements OnInit {
   }
 
   removeCompany() {
-    console.log('blbl', this.selectedCompanies);
-    this.selectedCompanies.forEach( (company) => {
-      this._companyService.deleteCompany(company).subscribe();
+    console.log('Id companies =>', this.selectedCompanies);
+    this.selectedCompanies.forEach( (companyToBeDeleted) => {
+      this._companyService.deleteCompany(companyToBeDeleted).subscribe();
+      this.companies.splice(this.companies.indexOf(companyToBeDeleted), 1);
     } );
   }
 
