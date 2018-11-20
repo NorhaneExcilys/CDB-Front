@@ -1,0 +1,22 @@
+<h1>Update company</h1>
+
+<form [formGroup]="companyForm" *ngIf="company">
+
+  <mat-form-field>
+    <input matInput name="name" placeholder="Company name" formControlName="name">
+  </mat-form-field>
+
+  <div *ngIf="emptyName">
+    {{ alertMessage }}
+  </div>
+
+  <button mat-raised-button color="primary" (click)="updateCompany()">
+      Update
+  </button>
+  <a href="">
+    <button mat-raised-button color="warn">
+      Cancel
+    </button>
+  </a>
+
+</form>

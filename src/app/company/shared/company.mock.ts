@@ -2,15 +2,15 @@ import { Company } from '../../models/company.model';
 
 export const MOCK_COMPANIES: Company[] = [
   {
-    companyId: 0,
+    id: 0,
     name: 'Excilys'
   },
   {
-    companyId: 1,
+    id: 1,
     name: 'IBM'
   },
   {
-    companyId: 2,
+    id: 2,
     name: 'Capgemini'
   }
 ];

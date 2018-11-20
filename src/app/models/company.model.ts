@@ -1,4 +1,4 @@
 export class Company {
-  companyId: number;
+  id: number;
   name: string;
 }

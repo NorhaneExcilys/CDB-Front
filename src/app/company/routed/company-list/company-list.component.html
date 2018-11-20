@@ -6,12 +6,13 @@
       Add company
     </button>
   </a>
-  <button mat-raised-button color="warn">Delete</button>
+  <button mat-raised-button color="warn" (click)="removeCompany()">Delete</button>
   <!--<button mat-raised-button disabled>Disabled</button>-->
 </div>
 
-<mat-selection-list>
-  <mat-list-option *ngFor="let company of companies">
-    {{company.name}}
+<mat-selection-list [(ngModel)]="selectedCompanies" (ngModelChange)="onCompanyChange($event)">
+  <mat-list-option *ngFor="let company of companies" [value]="company">
+    <a href="" routerLink="/companies/update/{{ company.id }}">{{company.name}}</a>
   </mat-list-option>
+
 </mat-selection-list>
