@@ -13,7 +13,9 @@
 
   <mat-selection-list class="company-list-table" [(ngModel)]="selectedCompanies" (ngModelChange)="onCompanyChange($event)">
     <mat-list-option *ngFor="let company of companies" [value]="company">
-      <a class="linkTableCell" href="" routerLink="/companies/update/{{ company.id }}">{{company.name}}</a>
+      <a class="linkTableCell" href="" routerLink="/companies/update/{{ company.id }}"><span mat-raised-button
+        matTooltip="Edit a company"
+        aria-label="Edit a company"> {{company.name}} </span></a>
     </mat-list-option>
   </mat-selection-list>
 
