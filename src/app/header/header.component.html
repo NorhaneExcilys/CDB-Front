@@ -1,5 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" id="main">
   <span class="cdb">Computer Database</span>
-  <a href="http://10.0.1.71:8080/cdb/Dashboard">Computer</a>
-  <a href="" routerLink="/companies">Company</a>
+  <button id="bManageComputers" (click)="manageComputers()" mat-raised-button >Manage computers</button>
 </mat-toolbar>

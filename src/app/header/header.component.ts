@@ -12,4 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  manageComputers() {
+    window.location.href = 'http://10.0.1.71:8080/cdb/Dashboard';
+  }
 }
