@@ -26,21 +26,20 @@ export class CompanyUpdateComponent implements OnInit {
 
   ngOnInit() {
     this.id = this._route.snapshot.paramMap.get('id');
-    console.log('id', this.id);
-    this._companyService.getCompany(this.id).subscribe(recipe => {
-      this.company = recipe;
+    this._companyService.getCompany(this.id).subscribe(company => {
+      this.company = company;
       this.companyForm.patchValue({
-        name: recipe.name
+        name: company.name
       });
     });
   }
 
   updateCompany() {
+    this.company.name = this.companyForm.get('name').value;
     if (this.company.name === undefined || this.company.name.trim() === '') {
       this.alertMessage = 'This is an incorrect name';
       this.emptyName = true;
     } else {
-      this.company.name = this.companyForm.get('name').value;
       this._companyService.updateCompany(this.company).subscribe(
         () => {
           console.log('next');
