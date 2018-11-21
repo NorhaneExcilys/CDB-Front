@@ -1,20 +1,20 @@
 <h1>Company</h1>
 
+<div class="example-button-row">
+  <a href="" routerLink='/companies/add'>
+    <button mat-raised-button color="primary">
+      Add company
+    </button>
+  </a>
+  <button mat-raised-button color="warn" (click)="removeCompany()">Delete</button>
+</div>
+
 <div class="company-list">
-  <div class="example-button-row">
-    <a href="" routerLink='/companies/add'>
-      <button mat-raised-button color="primary">
-        Add company
-      </button>
-    </a>
-    <button mat-raised-button color="warn" (click)="removeCompany()">Delete</button>
-    <!--<button mat-raised-button disabled>Disabled</button>-->
-  </div>
 
   <mat-selection-list class="company-list-table" [(ngModel)]="selectedCompanies" (ngModelChange)="onCompanyChange($event)">
     <mat-list-option *ngFor="let company of companies" [value]="company">
       <a href="" routerLink="/companies/update/{{ company.id }}">{{company.name}}</a>
     </mat-list-option>
-
   </mat-selection-list>
+
 </div>
