@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CompanyUpdateComponent implements OnInit {
   id: string;
   companyForm: FormGroup;
+  emptyName = false;
+  alertMessage = '';
 
   @Input()
   company: Company;
@@ -34,13 +36,18 @@ export class CompanyUpdateComponent implements OnInit {
   }
 
   updateCompany() {
-    this.company.name = this.companyForm.get('name').value;
-    this._companyService.updateCompany(this.company).subscribe(
-      () => {
-        console.log('next');
-        this._router.navigate(['/companies']);
-      },
-      error => console.log('error', error)
-    );
+    if (this.company.name === undefined || this.company.name.trim() === '') {
+      this.alertMessage = 'This is an incorrect name';
+      this.emptyName = true;
+    } else {
+      this.company.name = this.companyForm.get('name').value;
+      this._companyService.updateCompany(this.company).subscribe(
+        () => {
+          console.log('next');
+          this._router.navigate(['/companies']);
+        },
+        error => console.log('error', error)
+      );
+    }
   }
 }

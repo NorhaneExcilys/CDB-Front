@@ -10,9 +10,11 @@
   <!--<button mat-raised-button disabled>Disabled</button>-->
 </div>
 
-<mat-selection-list [(ngModel)]="selectedCompanies" (ngModelChange)="onCompanyChange($event)">
+<mat-selection-list class="company-list" [(ngModel)]="selectedCompanies" (ngModelChange)="onCompanyChange($event)">
   <mat-list-option *ngFor="let company of companies" [value]="company">
     <a href="" routerLink="/companies/update/{{ company.id }}">{{company.name}}</a>
   </mat-list-option>
 
 </mat-selection-list>
+
+
